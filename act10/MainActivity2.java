@@ -1,0 +1,30 @@
+package com.example.act10;
+
+import android.os.Bundle;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity2 extends AppCompatActivity {
+
+    TextView a1,a2,a3,a4;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
+        a1 = findViewById(R.id.textView);
+        a2 = findViewById(R.id.textView2);
+        a3 = findViewById(R.id.textView3);
+        a4 = findViewById(R.id.textView4);
+
+        Bundle extra =getIntent().getExtras();
+        String text = extra.getString("name");
+        String text1 = extra.getString("age");
+        String text2 = extra.getString("gender");
+        String text3 = extra.getString("city");
+        a1.setText(text);
+        a2.setText(text1);
+        a3.setText(text2);
+        a4.setText(text3);
+    }
+}
